@@ -1,0 +1,300 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Edumark</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+     <style>
+      /* استدعاء خط رائع من جوجل */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;900&display=swap');
+
+/* القائمة الرئيسية */
+#navigation {
+    list-style: none;
+    margin: 0 auto;                 
+    padding: 0;
+    display: flex;
+    justify-content: center;        /* وسط أفقي */
+    gap: 50px;                      /* مسافة واضحة بين الأزرار */
+    align-items: center;
+}
+
+/* كل زر */
+#navigation li {
+    position: relative;
+}
+
+#navigation li a {
+    display: inline-flex;           /* عشان يبقى أفقي دايمًا */
+    align-items: center;
+    justify-content: center;
+    padding: 14px 1px;             /* حجم أكبر للزر */
+    color: #fff;                    
+    font-size: 17px;                
+    font-weight: 900;               
+    font-family: 'Cairo', sans-serif; 
+    text-decoration: none;
+    letter-spacing: 1px;            
+    white-space: nowrap;            /* يمنع النزول لسطر جديد */
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+/* عند المرور */
+#navigation li a:hover {
+    color: #FFD700;                 
+    transform: scale(1.08);         
+}
+
+/* الصورة المنسدلة */
+.nav-image {
+    position: absolute;
+    top: 115%;                      
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-image img {
+    width: 140px;                   
+    height: auto;
+    border-radius: 8px;
+}
+
+/* إظهار الصورة عند المرور */
+#navigation li:hover .nav-image {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* حركة لطيفة عند الاختفاء */
+#navigation li:not(:hover) .nav-image {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+}
+.slider_info h3 {
+    font-size: 17px;         /* الحجم الجديد أصغر من الافتراضي */
+    line-height: 1.8;        /* مسافة مريحة بين الأسطر */
+    font-weight: 600;        /* وزن خط متوسط */
+    color: #fff;             /* لون أبيض (أو غيره حسب الخلفية) */
+    text-align: right;       /* محاذاة للنص العربي */
+}
+@media (max-width: 992px) {
+    .slider_info h3 {
+        font-size: 18px;   /* على التابلت */
+    }
+}
+@media (max-width: 576px) {
+    .slider_info h3 {
+        font-size: 16px;   /* على الموبايل */
+    }
+}
+
+     </style>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    <header>
+    <div class="header-area ">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid p-0">
+                <div class="row align-items-center no-gutters">
+                    <div class="col-xl-2 col-lg-2">
+                        <div class="logo-img">
+                            <a href="index.html">
+                                <img src="img/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-7">
+                        <div class="main-menu  d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation">
+                                     <li class="nav-item">
+                                        <a href="we.html">الإعداد والإشراف</a>
+                                        <div class="nav-image">
+                                            <img src="img/contact.png" alt="صورة التواصل">
+                                        </div>
+                                    </li>
+                                     <li class="nav-item">
+                                        <a href="contact.html">التواصل</a>
+                                        <div class="nav-image">
+                                            <img src="img/contact.png" alt="صورة التواصل">
+                                        </div>
+                                    </li>
+                                         <li class="nav-item">
+                                        <a href="courses.html">المحتوى التعليمي</a>
+                                        <div class="nav-image">
+                                            <img src="img/content.png" alt="صورة المحتوى التعليمي">
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#">التعليمات</a>
+                                        <div class="nav-image">
+                                            <img src="img/instruction.png" alt="صورة التعليمات">
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="active" href="index.html">الصفحة الرئيسية</a>
+                                        <div class="nav-image">
+                                            <img src="img/main.png" alt="صورة الصفحة الرئيسية">
+                                        </div>
+                                    </li>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>    <!-- header-end -->
+        <!-- bradcam_area_start -->
+        <div class="bradcam_area breadcam_bg overlay2">
+        </div>
+        <!-- bradcam_area_end -->
+<div class="modules-container">
+  <div class="module-card locked" data-url="mod1.html" data-pass="pass1">
+    <div class="lock-icon">🔒</div>
+    <div class="icon-wrapper">
+      <img src="img/data-management.png" alt="Module 1">
+    </div>
+    <h3>الموديول الأول<br>المهارات التكنولوجية</h3>
+  </div>
+
+  <div class="module-card locked" data-url="mod2.html" data-pass="pass2">
+    <div class="lock-icon">🔒</div>
+    <div class="icon-wrapper">
+      <img src="img/local-area-network.png" alt="Module 2">
+    </div>
+    <h3>الموديول الثاني<br>شبكات الحاسب الآلي</h3>
+  </div>
+
+  <div class="module-card locked" data-url="mod3.html" data-pass="pass3">
+    <div class="lock-icon">🔒</div>
+    <div class="icon-wrapper">
+      <img src="img/content-creation.png" alt="Module 3">
+    </div>
+    <h3>الموديول الثالث<br>تكنولوجيا البحث الرقمي</h3>
+  </div>
+
+  <div class="module-card locked" data-url="mod4.html" data-pass="pass4">
+    <div class="lock-icon">🔒</div>
+    <div class="icon-wrapper">
+      <img src="img/app-development.png" alt="Module 4">
+    </div>
+    <h3>الموديول الرابع<br>تصميم مواقع الإنترنت</h3>
+  </div>
+</div>
+
+   <script>
+  function checkPassword(link, correctPassword) {
+    const userInput = prompt("من فضلك أدخل كلمة المرور");
+    if (userInput === correctPassword) {
+      window.location.href = link;
+    } else {
+      alert("كلمة المرور غير صحيحة!");
+    }
+  }
+
+  document.querySelectorAll(".module-card").forEach(card => {
+  card.addEventListener("click", () => {
+    if (card.classList.contains("unlocked")) {
+      window.location.href = card.dataset.url;
+      return;
+    }
+
+    let pass = prompt("من فضلك أدخل كلمة المرور:");
+    if (pass === card.dataset.pass) {
+      alert("تم الفتح بنجاح ✅");
+      card.classList.remove("locked");
+      card.classList.add("unlocked");
+      card.querySelector(".lock-icon").style.display = "none";
+    } else {
+      alert("كلمة المرور غير صحيحة ❌");
+    }
+  });
+});
+
+</script>
+    <!-- footer -->
+    <footer class="footer footer_bg_1">
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+Copyright &copy; All rights reserved  by <a href="https://colorlib.com" target="_blank">Aya Elmasry</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

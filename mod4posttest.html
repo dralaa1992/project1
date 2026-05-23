@@ -1,0 +1,767 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Edumark</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <style>
+          .sub-nav {
+                  background-color: #C94BBD;
+                  padding: 10px 0;
+                  
+                }
+
+                .sub-nav ul {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  list-style: none;
+                  margin: 0;
+                  padding: 0;
+                  gap: 20px;
+                  direction: rtl; /* تبدأ من اليمين */
+                }
+
+                .sub-nav ul li a {
+                  color: white;
+                  font-weight: bold;
+                  font-size: 16px;
+                  text-decoration: none;
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                  padding: 8px 12px; /* مساحة لظهور الخلفية */
+                  border-radius: 6px; /* حواف دائرية */
+                  transition: background-color 0.3s;
+                }
+
+                .sub-nav ul li a:hover {
+                  background-color: #D96FCC; /* لون أفتح عند المرور */
+                }
+
+                .sub-nav i {
+                  font-size: 18px;
+}
+
+                .sign-language-display {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 40px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                max-width: 90%;
+                margin: 0 auto;
+                }
+
+                .sign-language-display .sign-video {
+                margin-bottom: 20px;
+                width: 300px;
+                height: auto;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                }
+
+                .sign-language-display h2 {
+                font-size: 28px;
+                font-family: 'Cairo', sans-serif;
+                color: #450202;
+                text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+                line-height: 1.4;
+                font-weight: 800;
+                }
+                   .container {
+                      display: flex;
+                      height: auto;
+                      align-items: center;
+                      justify-content: center;
+                      padding: 20px;
+                      box-sizing: border-box;
+                      gap: 20px; /* مسافة بين الفيديو والأسئلة */
+                      direction: rtl;
+                      padding-bottom: 50px; /* مساحة إضافية تحت */
+                  }
+.quiz-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: rgb(81, 55, 168);  /* لون النص */
+    background: none;         /* بدون خلفية */
+    padding: 10px;
+    margin: 0 auto 30px auto; /* يخليها في المنتصف */
+    position: relative;
+    display: block;           /* علشان يتمركز */
+    width: fit-content;       /* العرض على قد النص */
+}
+
+/* الخط المتوهج تحت العنوان */
+.quiz-title::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin-top: 8px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, rgb(81, 55, 168), rgba(201, 75, 189, 0.8));
+    box-shadow: 0 0 12px rgba(201, 75, 189, 0.8), 0 0 20px rgb(81, 55, 168);
+}
+
+
+
+/* الحاوية الرئيسية */
+.quiz-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* صندوق الاختبار */
+.quiz-section {
+    width: 75%;
+    max-width: 850px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(81, 55, 168, 0.2);
+}
+
+/* كارت السؤال */
+.question-card {
+    margin-bottom: 25px;
+    border: 2px solid rgba(201, 75, 189, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    background: #fdfdfd;
+    box-shadow: 0 0 12px rgba(81, 55, 168, 0.15);
+    direction: rtl; /* يخلي السؤال نفسه من اليمين لليسار */
+    text-align: right;
+}
+
+/* صورة السؤال */
+.question-img {
+    max-width: 100%;
+    margin: 15px 0;
+    border-radius: 10px;
+    display: block;
+}
+
+/* الإجابات */
+.answers {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;   /* في المنتصف */
+    direction: rtl;            /* ترتيب الإجابات من اليمين للشمال */
+}
+
+.answer-img {
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: 0.3s;
+    text-align: center;
+}
+.answer-img img {
+    width: 140px;
+    height: auto;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+/* تأثير التوهج عند المرور */
+.answer-img:hover img {
+    transform: scale(1.05); /* تكبير خفيف */
+    box-shadow: 0 0 15px rgba(201, 75, 189, 0.8), 0 0 25px rgb(81, 55, 168);
+    border: 2px solid rgba(201, 75, 189, 0.8);
+}
+
+.answer-img input {
+    display: none;
+}
+.answer-img input:checked + img {
+    border: 3px solid rgb(81, 55, 168);
+    box-shadow: 0 0 15px rgba(201, 75, 189, 0.8);
+}
+
+/* زر الإرسال */
+button {
+    display: block;
+    margin: 30px auto 60px auto; /* مسافة تحت الزر لرؤية النتيجة */
+    padding: 14px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgb(81, 55, 168), rgba(201, 75, 189, 0.8));
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background: linear-gradient(135deg, rgba(201, 75, 189, 0.9), rgb(81, 55, 168));
+    box-shadow: 0 0 12px rgba(201, 75, 189, 0.9);
+}
+
+/* النتيجة */
+.result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(81, 55, 168);
+}
+/* استدعاء خط رائع من جوجل */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;900&display=swap');
+
+/* القائمة الرئيسية */
+#navigation {
+    list-style: none;
+    margin: 0 auto;                 
+    padding: 0;
+    display: flex;
+    justify-content: center;        /* وسط أفقي */
+    gap: 50px;                      /* مسافة واضحة بين الأزرار */
+    align-items: center;
+}
+
+/* كل زر */
+#navigation li {
+    position: relative;
+}
+
+#navigation li a {
+    display: inline-flex;           /* عشان يبقى أفقي دايمًا */
+    align-items: center;
+    justify-content: center;
+    padding: 14px 1px;             /* حجم أكبر للزر */
+    color: #fff;                    
+    font-size: 22px;                
+    font-weight: 900;               
+    font-family: 'Cairo', sans-serif; 
+    text-decoration: none;
+    letter-spacing: 1px;            
+    white-space: nowrap;            /* يمنع النزول لسطر جديد */
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+/* عند المرور */
+#navigation li a:hover {
+    color: #FFD700;                 
+    transform: scale(1.08);         
+}
+
+/* الصورة المنسدلة */
+.nav-image {
+    position: absolute;
+    top: 115%;                      
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-image img {
+    width: 140px;                   
+    height: auto;
+    border-radius: 8px;
+}
+
+/* إظهار الصورة عند المرور */
+#navigation li:hover .nav-image {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* حركة لطيفة عند الاختفاء */
+#navigation li:not(:hover) .nav-image {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+}
+.slider_info h3 {
+    font-size: 17px;         /* الحجم الجديد أصغر من الافتراضي */
+    line-height: 1.8;        /* مسافة مريحة بين الأسطر */
+    font-weight: 600;        /* وزن خط متوسط */
+    color: #fff;             /* لون أبيض (أو غيره حسب الخلفية) */
+    text-align: right;       /* محاذاة للنص العربي */
+}
+@media (max-width: 992px) {
+    .slider_info h3 {
+        font-size: 18px;   /* على التابلت */
+    }
+}
+@media (max-width: 576px) {
+    .slider_info h3 {
+        font-size: 16px;   /* على الموبايل */
+    }
+}
+
+.sub-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* وسط أفقي */
+  gap: 25px;
+  background: #5124a0; /* خلفية بنفسجية */
+  padding: 12px 0;
+  border-radius: 8px;
+}
+
+.sub-nav ul li {
+  position: relative;
+}
+
+.sub-nav ul li a {
+  color: #5124a0;            /* النص بنفسجي */
+  font-size: 14px;           /* حجم أوضح */
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 18px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;          /* خلفية بيضاء ثابتة */
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15); /* بروز */
+}
+
+/* عند المرور */
+.sub-nav ul li a:hover {
+  background: #FFD700;       /* أصفر ذهبي عند المرور */
+  color: #000;               /* النص أسود للوضوح */
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.25); /* بروز أكبر */
+}
+
+/* الصورة المنسدلة */
+.nav-image {
+  position: absolute;
+  top: 115%; /* أسفل الزر */
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  background: #fff;
+  padding: 6px;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  z-index: 99;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.nav-image img {
+  width: 140px;
+  border-radius: 6px;
+}
+
+/* إظهار الصورة عند المرور */
+.sub-nav ul li:hover .nav-image {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+    </style>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+   <header>
+    <div class="header-area ">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid p-0">
+                <div class="row align-items-center no-gutters">
+                    <div class="col-xl-2 col-lg-2">
+                        <div class="logo-img">
+                            <a href="index.html">
+                                <img src="img/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-7">
+                        <div class="main-menu  d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation">
+                                     <li class="nav-item with-icon">
+                                        <a href="we.html"> الإعداد والإشراف
+                                        </a>
+                                        <div class="nav-image">
+                                            <img src="img/contact.png" alt="صورة التواصل">
+                                        </div>
+                                    </li>
+
+                                     <li class="nav-item">
+                                        <a href="contact.html">التواصل</a>
+                                        <div class="nav-image">
+                                            <img src="img/contact.png" alt="صورة التواصل">
+                                        </div>
+                                    </li>
+                                         <li class="nav-item">
+                                        <a href="courses.html">المحتوى التعليمي</a>
+                                        <div class="nav-image">
+                                            <img src="img/content.png" alt="صورة المحتوى التعليمي">
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#">التعليمات</a>
+                                        <div class="nav-image">
+                                            <img src="img/instruction.png" alt="صورة التعليمات">
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="active" href="index.html">الصفحة الرئيسية</a>
+                                        <div class="nav-image">
+                                            <img src="img/main.png" alt="صورة الصفحة الرئيسية">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- header-end -->
+        <!-- bradcam_area_start -->
+        <div class="bradcam_area breadcam_bg overlay2">
+        </div>
+        <!-- bradcam_area_end -->
+<!-- Nav جديد أسفل الناف الرئيسي -->
+          <div class="sub-nav">
+  <div class="container-fluid p-0">
+    <ul>
+      <li>
+        <a href="mod4.html"><i class="fa fa-book"></i> عنوان الموديول</a>
+        <div class="nav-image"><img src="img/title.png" alt="عنوان الموديول"></div>
+      </li>
+      <li>
+        <a href="Mod4 justifications.html"><i class="fa fa-book"></i> مبررات دراسة الموديول</a>
+        <div class="nav-image"><img src="img/jus.png" alt="مبررات"></div>
+      </li>
+      <li>
+        <a href="mod4aim.html"><i class="fa fa-bullseye"></i> أهداف الموديول</a>
+        <div class="nav-image"><img src="img/aim.png" alt="أهداف"></div>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-file-text-o"></i> الاختبار القبلي</a>
+        <div class="nav-image"><img src="img/pr.png" alt="اختبار قبلي"></div>
+      </li>
+      <li>
+        <a href="mod4 content.html"><i class="fa fa-list"></i> محتوى الموديول</a>
+        <div class="nav-image"><img src="img/contents.png" alt="المحتوى"></div>
+      </li>
+      <li>
+        <a href="mod4activ.html"><i class="fa fa-tasks"></i> أنشطة الموديول</a>
+        <div class="nav-image"><img src="img/activ.png" alt="أنشطة"></div>
+      </li>
+      <li>
+        <a href="mod4selftest.html"><i class="fa fa-check-circle"></i> التقويم الذاتي للموديول</a>
+        <div class="nav-image"><img src="img/self.png" alt="التقويم الذاتي"></div>
+      </li>
+      <li>
+        <a href="mod4posttest.html"><i class="fa fa-pencil"></i> الاختبار البعدي</a>
+        <div class="nav-image"><img src="img/post.png" alt="اختبار بعدي"></div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="quiz-title">الاختبار البعدي للموديول الرابع</h2>
+<hr><br>
+
+<div class="quiz-container">
+    <!-- قسم الاختبار -->
+    <div class="quiz-section">
+        <form id="quizForm">
+
+            <!-- مثال على سؤال بصورة -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"></div>
+                    <img src="img/m4pre1.png" alt="صورة السؤال 1" class="question-img">
+                </div>
+                <div class="answers">
+                    <label class="answer-img">
+                        <input type="radio" name="q1" value="0">
+                        <img src="img/m4s1g1.png" alt="إجابة أ">
+                    </label>
+                    <label class="answer-img">
+                        <input type="radio" name="q1" value="0">
+                        <img src="img/m4s1g2.png" alt="إجابة ب">
+                    </label>
+                    <label class="answer-img">
+                        <input type="radio" name="q1" value="0">
+                        <img src="img/m4s1g3.png" alt="إجابة ب">
+                    </label>
+                    <label class="answer-img">
+                        <input type="radio" name="q1" value="0">
+                        <img src="img/m4s1g4.png" alt="إجابة ب">
+                    </label>
+                </div>
+            </div>
+
+            <!-- سؤال ثاني مثال -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"></div>
+                    <img src="img/m4pre2.png" alt="صورة السؤال 2" class="question-img">
+                </div>
+                <div class="answers">
+                    <label class="answer-img">
+                        <input type="radio" name="q2" value="1">
+                        <img src="img/m4s2g1.png" alt="إجابة أ">
+                    </label>
+                    <label class="answer-img">
+                        <input type="radio" name="q2" value="0">
+                        <img src="img/m4s2g2.png" alt="إجابة ب">
+                    </label>
+                    <label class="answer-img">
+                        <input type="radio" name="q2" value="0">
+                        <img src="img/m4s2g3.png" alt="إجابة ب">
+                    </label>
+                    <label class="answer-img">
+                        <input type="radio" name="q2" value="0">
+                        <img src="img/m4s2g4.png" alt="إجابة ب">
+                    </label>
+                </div>
+            </div>
+             <!-- سؤال ثالث مثال -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"></div>
+                    <img src="img/m4pre3.png" alt="صورة السؤال 2" class="question-img">
+                </div>
+                <div class="answers">
+                    <label class="answer-img">
+                        <input type="radio" name="q3" value="0">
+                        <img src="img/m4s3g1.png" alt="إجابة أ">
+                    </label>
+                    <label class="answer-img">
+                        <input type="radio" name="q3" value="1">
+                        <img src="img/m4s3g2.png" alt="إجابة ب">
+                    </label>
+                    <label class="answer-img">
+                        <input type="radio" name="q3" value="1">
+                        <img src="img/m4s3g3.png" alt="إجابة ب">
+                    </label>
+                    <label class="answer-img">
+                        <input type="radio" name="q3" value="1">
+                        <img src="img/m4s3g4.png" alt="إجابة ب">
+                    </label>
+                </div>
+            </div>
+             <!-- سؤال رابع مثال -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"></div>
+                    <img src="img/m4pre4.png" alt="صورة السؤال 2" class="question-img">
+                </div>
+                <div class="answers">
+                    <label class="answer-img">
+                        <input type="radio" name="q4" value="0">
+                        <img src="img/m4s4g1.png" alt="إجابة أ">
+                    </label>
+                    <label class="answer-img">
+                        <input type="radio" name="q4" value="0">
+                        <img src="img/m4s4g2.png" alt="إجابة ب">
+                    </label>
+                    <label class="answer-img">
+                        <input type="radio" name="q4" value="0">
+                        <img src="img/m4s4g3.png" alt="إجابة ب">
+                    </label>
+                    <label class="answer-img">
+                        <input type="radio" name="q4" value="0">
+                        <img src="img/m4s4g4.png" alt="إجابة ب">
+                    </label>
+                </div>
+            </div>
+             <!-- سؤال خامس مثال -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"></div>
+                    <img src="img/m4pre5.png" alt="صورة السؤال 2" class="question-img">
+                </div>
+                <div class="answers">
+                    <label class="answer-img">
+                        <input type="radio" name="q5" value="0">
+                        <img src="img/m4s5g1.png" alt="إجابة أ">
+                    </label>
+                    <label class="answer-img">
+                        <input type="radio" name="q5" value="1">
+                        <img src="img/m4s5g2.png" alt="إجابة ب">
+                    </label>
+                     <label class="answer-img">
+                        <input type="radio" name="q5" value="1">
+                        <img src="img/m4s5g3.png" alt="إجابة ب">
+                    </label>
+                     <label class="answer-img">
+                        <input type="radio" name="q5" value="1">
+                        <img src="img/m4s5g4.png" alt="إجابة ب">
+                    </label>
+                </div>
+            </div>
+            
+
+            <!-- زر إرسال -->
+            <button type="button" onclick="submitQuiz()">إرسال الإجابات</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+</div>
+
+
+
+<script>
+function submitQuiz() {
+    let totalQuestions = document.querySelectorAll(".question-card").length;
+    let score = 0;
+    let feedbackHtml = "";
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        let selected = document.querySelector(`input[name="q${i}"]:checked`);
+        let allOptions = document.querySelectorAll(`input[name="q${i}"]`);
+
+        feedbackHtml += `<div style="margin-bottom:20px; padding:15px; border:1px solid #ddd; border-radius:10px;">`;
+        feedbackHtml += `<h4>السؤال ${i}:</h4>`;
+
+        allOptions.forEach(opt => {
+            let img = opt.nextElementSibling;
+            let optValue = parseInt(opt.value);
+
+            // 🟩 لو دي هي الإجابة اللي اختارها الطالب وكانت صحيحة
+            if (selected && opt === selected && optValue === 1) {
+                feedbackHtml += `
+                    <div style="display:inline-block; margin:10px; text-align:center;">
+                        <img src="${img.src}" style="width:120px; border:3px solid green; border-radius:8px; box-shadow:0 0 12px green;">
+                        <p style="color:green; font-weight:bold;">إجابتك صحيحة</p>
+                    </div>`;
+                score++;
+            } 
+            // 🟥 لو دي هي الإجابة اللي اختارها الطالب وكانت خاطئة
+            else if (selected && opt === selected && optValue === 0) {
+                feedbackHtml += `
+                    <div style="display:inline-block; margin:10px; text-align:center;">
+                        <img src="${img.src}" style="width:120px; border:3px solid red; border-radius:8px; box-shadow:0 0 12px red;">
+                        <p style="color:red; font-weight:bold;">إجابتك خاطئة</p>
+                    </div>`;
+            } 
+            // باقي الاختيارات تظهر عادي بدون تحديد
+            else {
+                feedbackHtml += `
+                    <div style="display:inline-block; margin:10px; text-align:center;">
+                        <img src="${img.src}" style="width:120px; border:2px solid #ccc; border-radius:8px;">
+                    </div>`;
+            }
+        });
+
+        feedbackHtml += `</div>`;
+    }
+
+    let percentage = Math.round((score / totalQuestions) * 100);
+    let resultDiv = document.getElementById("result");
+
+    if (percentage >= 80) {
+        resultDiv.innerHTML = `
+            <h3 style="color:green;">✅ حصلت على ${percentage}% - اجتزت الاختبار</h3>
+            <p style="font-weight:bold; color:#333;">انتقل إلى دراسة الموديول الثاني</p>
+            ${feedbackHtml}
+        `;
+    } else {
+        resultDiv.innerHTML = `
+            <h3 style="color:red;">❌ حصلت على ${percentage}% - لم تجتز الاختبار</h3>
+            <p style="font-weight:bold; color:#333;">أعد دراسة الموديول وحاول مرة أخرى</p>
+            ${feedbackHtml}
+        `;
+    }
+}
+</script>
+
+
+
+
+    <!-- footer -->
+    <footer class="footer footer_bg_1">
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+Copyright &copy; All rights reserved  by <a href="https://colorlib.com" target="_blank">Aya Elmasry</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
